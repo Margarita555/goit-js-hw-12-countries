@@ -4,7 +4,9 @@
 <div>
     <p class="country-detail">Capital: <span class="detail">{{capital}}</span></p>
     <p class="country-detail">Population: <span class="detail">{{population}}</span></p>
-    <p class="country-detail">Languages: <span class="detail">{{#each languages}} {{name}} {{/each}}</span></p>
+    <ul class="country-detail">Languages: 
+        {{#each languages}}<li class="detail language-detail">{{name}}</li>{{/each}}
+    </ul>
 </div>
 <div>
     <img class="country-flag" src="{{flag}}" alt="flag" width="300">

@@ -11,6 +11,13 @@ body {
   font-size: 22px;
 }
 
+ul,
+p,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   padding: 2.25em 1.6875em;
   background-image: -webkit-repeating-radial-gradient(
@@ -61,11 +68,17 @@ body {
   padding: 10px;
   font-size: 28px;
   width: 650px;
+  margin-bottom: 20px;
+}
+
+.countries-list {
+  margin-left: 25px;
 }
 
 .country-title {
   font-size: 34px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .country-box {
@@ -79,4 +92,8 @@ body {
 
 .detail {
   font-weight: 400;
+}
+
+.language-detail {
+  margin-left: 25px;
 }
