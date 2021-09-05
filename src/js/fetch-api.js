@@ -4,12 +4,12 @@ import debounce from 'lodash.debounce';
 import countryTemplate from '../templates/country-template.hbs';
 
 const inputEl = document.querySelector('.input');
-// const countriesList = document.querySelector('.countries-list');
+const countriesList = document.querySelector('.countries-list');
+const countryItem = document.querySelector('.country-item');
 
 inputEl.addEventListener('input', debounce(onInputChange,500));
 function onInputChange() {
     let inputValue = inputEl.value;
-    console.log(inputValue)
     fetchCountries(inputValue)
 }
 
@@ -23,10 +23,8 @@ function fetchCountries(countryName) {
         console.log(error);
         })
         // .finally(() => countryItem.reset)
-    
 }
-const countriesList = document.querySelector('.countries-list');
-const countryItem = document.querySelector('.country-item');
+
 
 function renderCountry(countries) {
     countryItem.innerHTML = '';
@@ -42,8 +40,7 @@ function renderCountry(countries) {
         
     } else if (countries.length === 1) {
         countriesList.innerHTML = '';
-        console.log(countries);
-        const markup = countryTemplate(countries)
-        countryItem.insertAdjacentHTML('beforeend', markup)
+        const markup = countryTemplate(countries);
+        countryItem.insertAdjacentHTML('beforeend', markup);
     }
 }
