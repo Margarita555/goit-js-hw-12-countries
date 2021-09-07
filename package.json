@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Margarita555/goit-js-hw-12-countries/issues"
   },
-  "homepage": "https://margarita555.github.io/goit-js-hw-12-countries",
+  "homepage": "https://Margarita555.github.io/goit-js-hw-12-countries",
   "devDependencies": {
     "@pnotify/core": "^5.2.0",
     "parcel-bundler": "^1.12.5",
