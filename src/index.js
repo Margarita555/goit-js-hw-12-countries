@@ -37,7 +37,8 @@ function renderCountry(countries) {
     }
 }
 
-function makeCountriesList (countries){ return countries.map(country => {
+function makeCountriesList(countries) {
+    return countries.map(country => {
             const liEl = document.createElement('li');
             liEl.textContent = country.name;
             return liEl
