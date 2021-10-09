@@ -23,7 +23,7 @@ function onInputChange(e) {
 
 function onFetchError(e) {
     const myError = error({
-      text:"Try again later."
+      text:"Error. The server can't find the requested resource"
 });
 }
 
