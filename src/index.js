@@ -15,20 +15,29 @@ const countryItem = document.querySelector('.country-item');
 inputEl.addEventListener('input', debounce(onInputChange, 500));
 
 function onInputChange(e) {
-    let inputValue = inputEl.value;
-    const fetchedCountries = fetchCountries(inputValue);
-    fetchedCountries.then(renderCountry)
-    .catch(onFetchError);
+    let inputValue = inputEl.value.trim();
+    if (!inputValue) {
+    
+    return;
+  }
+    
+    fetchCountries(inputValue)
+    .then(renderCountry)
+
 }
 
-function onFetchError(e) {
+function onFetchError() {
     const myError = error({
-      text:"Error. The server can't find the requested resource"
+      text:"Please enter a more specific query!"
 });
 }
 
 function renderCountry(countries) {
     countryItem.innerHTML = '';
+    if (countries.status === 404) {
+        onFetchError()
+        clearCountriesContainer()
+    }else
     if (countries.length > 10) {
     const myNotice = notice({
       text: "Too many matches found. Please enter a more specific query!"
